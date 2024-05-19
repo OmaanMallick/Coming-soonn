@@ -79,19 +79,17 @@ document.addEventListener("DOMContentLoaded", () => {
       errorMessage.style.display = "none";
     }
 
-    db.collection("email")
-      .add({
-        text: text,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      })
-
+    db.collection("emails")
+      .add({ text: text })
       .then(() => {
-        console.log("Email added successfully");
-        email.value = "";
+        // Open the default mail client with pre-filled recipient email
+        window.location.href = `mailto:omaanmallick11@gmail.com?subject=Notify%20Me&body=Please%20notify%20me%20at%20${encodeURIComponent(
+          text
+        )}`;
+        email.value = ""; // Clear the input field
       })
-
       .catch((error) => {
-        console.error("Error adding email: ", error);
+        alert("Error adding email: " + error.message);
       });
   });
   function isValidEmail(email) {
