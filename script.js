@@ -1,4 +1,4 @@
-let countDownDate = new Date("June 01, 2024 00:00:00").getTime();
+let countDownDate = new Date("June 27, 2025 00:00:00").getTime();
 let x = setInterval(function () {
   let now = new Date().getTime();
   let distance = countDownDate - now;
@@ -24,7 +24,7 @@ let x = setInterval(function () {
 
 // MainPage CountDown
 
-let countDownnDate = new Date("June 01, 2024 00:00:00").getTime();
+let countDownnDate = new Date("June 27, 2025 00:00:00").getTime();
 let xx = setInterval(function () {
   let now = new Date().getTime();
   let distance = countDownDate - now;
